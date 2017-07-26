@@ -158,9 +158,7 @@
             "deps": ["jquery"],
             "resources": [
               "dist/css/bootstrap-material-design.min.css",
-              "dist/css/ripples.min.css",
-              "scripts/material.js",
-              "scripts/ripples.js"
+              "dist/css/ripples.min.css"
             ]
           }
         ]
