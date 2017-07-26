@@ -63,7 +63,7 @@
     "loader": {
       "type": "system",
       "configTarget": "vendor-bundle.js",
-      "includeBundleMetadataInConfig": "auto",
+      "includeBundleMetadataInConfig": "true",
       "plugins": [
         {
           "name": "text",
@@ -136,6 +136,30 @@
             "path": "../node_modules/aurelia-testing/dist/amd",
             "main": "aurelia-testing",
             "env": "dev"
+          },
+          "jquery",
+          {
+            "name": "bootstrap",
+            "path": "../node_modules/bootstrap/dist",
+            "main": "js/bootstrap.min.js",
+            "deps": [
+              "jquery"
+            ],
+            "exports": "$",
+            "resources": [
+              "css/bootstrap.css"
+            ]
+          },
+          {
+            "name": "bootstrap-material-design",
+            "main": "scripts/index.js",
+            "path": "../node_modules/bootstrap-material-design",
+            "exports": "$",
+            "deps": ["jquery"],
+            "resources": [
+              "dist/css/bootstrap-material-design.min.css",
+              "dist/css/ripples.min.css"
+            ]
           }
         ]
       }
