@@ -63,7 +63,7 @@
     "loader": {
       "type": "system",
       "configTarget": "vendor-bundle.js",
-      "includeBundleMetadataInConfig": "auto",
+      "includeBundleMetadataInConfig": "true",
       "plugins": [
         {
           "name": "text",
@@ -148,6 +148,19 @@
             "exports": "$",
             "resources": [
               "css/bootstrap.css"
+            ]
+          },
+          {
+            "name": "bootstrap-material-design",
+            "main": "scripts/index.js",
+            "path": "../node_modules/bootstrap-material-design",
+            "exports": "$",
+            "deps": ["jquery"],
+            "resources": [
+              "dist/css/bootstrap-material-design.min.css",
+              "dist/css/ripples.min.css",
+              "scripts/material.js",
+              "scripts/ripples.js"
             ]
           }
         ]
