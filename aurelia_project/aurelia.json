@@ -159,7 +159,15 @@
             "resources": [
               "**/*.html"
             ]
-          }          
+          },
+          {
+            "name": "aurelia-leaflet",
+            "main": "index",
+            "path": "../node_modules/aurelia-leaflet/dist/amd",
+            "resources": [
+              "**/*.html"
+            ]
+          }
         ]
       }
     ]
