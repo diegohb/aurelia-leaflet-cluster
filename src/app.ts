@@ -1,5 +1,4 @@
 import * as $ from "jquery";
-import "bootstrap-material-design";
 
 export class App { 
   message = 'Hello World!';  
@@ -9,7 +8,6 @@ export class App {
   }
 
   public attached() {
-    $.material.init()
     $("h2").text("jquery loaded!")
   }
 }
