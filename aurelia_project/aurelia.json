@@ -150,12 +150,32 @@
               "css/bootstrap.css"
             ]
           },
+          "velocity-animate",
+          "tether",
+          {
+            "name": "aurelia-bootstrap",
+            "path": "../node_modules/aurelia-bootstrap/dist/amd",
+            "main": "index",
+            "resources": [
+              "**/*.html"
+            ]
+          },
+          {
+            "name": "leaflet",
+            "main": "leaflet-src.js",
+            "path": "../node_modules/leaflet/dist",
+            "resources": [
+              "leaflet.css"
+            ]
+          },
           {
             "name": "bootstrap-material-design",
             "main": "scripts/index.js",
             "path": "../node_modules/bootstrap-material-design",
             "exports": "$",
-            "deps": ["jquery"],
+            "deps": [
+              "jquery"
+            ],
             "resources": [
               "dist/css/bootstrap-material-design.min.css",
               "dist/css/ripples.min.css"
