@@ -161,13 +161,13 @@
             ]
           },
           {
-            "name": "leaflet",
-            "main": "leaflet-src.js",
-            "path": "../node_modules/leaflet/dist",
+            "name": "aurelia-leaflet",
+            "main": "index",
+            "path": "../node_modules/aurelia-leaflet/dist/amd",
             "resources": [
-              "leaflet.css"
+              "**/*.html"
             ]
-          }
+          }       
         ]
       }
     ]

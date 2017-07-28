@@ -5,7 +5,8 @@ export function configure(aurelia: Aurelia) {
   aurelia.use
     .standardConfiguration()
     .feature("resources")
-    .plugin("aurelia-bootstrap");
+    .plugin("aurelia-bootstrap")
+    .plugin('aurelia-leaflet');
 
   if (environment.debug) {
     aurelia.use.developmentLogging();
