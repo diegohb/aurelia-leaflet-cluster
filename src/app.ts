@@ -2,15 +2,15 @@ import * as $ from "jquery";
 import { Map, MapOptions, LatLng, tileLayer, LatLngExpression, LatLngLiteral, Icon, control, Layer } from "leaflet";
 import { GeographicExtent } from './model/GeographicExtent';
 import { GeoCoordinate } from "./model/GeoCoordinate";
+import { bindable, bindingMode } from 'aurelia-framework';
 
 export class App {
   private _map: Map;
-
   message = 'Hello World!';
-  mapBounds: string = "";
+
+  mapExtent: GeographicExtent = null;
 
   constructor() {
-
   }
 
   public async attached(): Promise<any> {
@@ -31,16 +31,13 @@ export class App {
     let newMap = new Map(elMap, mapOptions);
 
     this._map = await this.initializeMap(newMap, mapOptions.maxZoom);
-    this._map.on("moveend", this.onMapMoveEnd);
-    this.onMapMoveEnd(null, null);
+    this._map.on("moveend", async () => {
+      this.mapExtent = await App.getMapExtentBounds(this._map);
+    });
+
+    this.mapExtent = await App.getMapExtentBounds(this._map);
 
     return Promise.resolve(this._map);
-  }
-
-  private async onMapMoveEnd(arg0: any, arg1: any): Promise<any> {
-    let geoExtent:GeographicExtent = await this.getMapExtentBounds(this._map);
-    this.mapBounds = geoExtent.toHTML();
-    return Promise.resolve();
   }
 
   private async initializeMap(pLeafletMap: Map, pMaxZoom: number): Promise<any> {
@@ -71,7 +68,10 @@ export class App {
     }
   }
 
-  private async getMapExtentBounds(pMap: Map): Promise<GeographicExtent> {
+  private static async getMapExtentBounds(pMap: Map): Promise<GeographicExtent> {
+    if (!pMap)
+      throw "getMapExtentBounds: pMap is null!"
+
     let mapBounds = pMap.getBounds();
 
     let boundTop: GeoCoordinate = new GeoCoordinate(mapBounds.getNorthWest().lng, mapBounds.getNorthWest().lat);
