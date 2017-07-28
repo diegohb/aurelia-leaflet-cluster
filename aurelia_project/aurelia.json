@@ -167,6 +167,15 @@
             "resources": [
               "leaflet.css"
             ]
+          },
+          {
+            "name": "leaflet.markercluster",
+            "main": "dist/leaflet.markercluster.js",
+            "path": "../node_modules/leaflet.markercluster",
+            "resources": [
+              "dist/MarkerCluster.css",
+              "dist/MarkerCluster.Default.css"
+            ]
           }
         ]
       }

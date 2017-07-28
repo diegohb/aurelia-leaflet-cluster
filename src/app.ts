@@ -3,6 +3,7 @@ import { Map, MapOptions, LatLng, tileLayer, LatLngExpression, LatLngLiteral, Ic
 import { GeographicExtent } from './model/GeographicExtent';
 import { GeoCoordinate } from "./model/GeoCoordinate";
 import { bindable, bindingMode } from 'aurelia-framework';
+import "leaflet.markercluster";
 
 export class App {
   private _map: Map;
