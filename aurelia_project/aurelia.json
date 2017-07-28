@@ -170,11 +170,11 @@
           },
           {
             "name": "leaflet.markercluster",
-            "main": "dist/leaflet.markercluster.js",
-            "path": "../node_modules/leaflet.markercluster",
+            "main": "leaflet.markercluster.js",
+            "path": "../node_modules/leaflet.markercluster/dist",
             "resources": [
-              "dist/MarkerCluster.css",
-              "dist/MarkerCluster.Default.css"
+              "MarkerCluster.css",
+              "MarkerCluster.Default.css"
             ]
           }
         ]
