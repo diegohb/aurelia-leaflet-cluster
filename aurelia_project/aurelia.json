@@ -71,7 +71,7 @@
             ".html",
             ".css"
           ],
-          "stub": false
+          "stub": true
         }
       ]
     },
@@ -170,13 +170,15 @@
           },
           {
             "name": "bootstrap-material-design",
-            "main": "scripts/index.js",
+            "main": "",
             "path": "../node_modules/bootstrap-material-design",
             "exports": "$",
             "deps": [
               "jquery"
             ],
             "resources": [
+              "dist/js/material.min.js",
+              "dist/js/ripples.min.js",
               "dist/css/bootstrap-material-design.min.css",
               "dist/css/ripples.min.css"
             ]
