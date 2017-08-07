@@ -175,7 +175,8 @@
             "resources": [
               "MarkerCluster.css",
               "MarkerCluster.Default.css"
-            ]
+            ],
+            "deps": ["leaflet"]
           }
         ]
       }
