@@ -62,8 +62,8 @@
     ],
     "loader": {
       "type": "system",
-      "configTarget": "vendor-bundle.js",
-      "includeBundleMetadataInConfig": "auto",
+      "configTarget": "infra.au-bundle.js",
+      "includeBundleMetadataInConfig": "true",
       "plugins": [
         {
           "name": "text",
@@ -81,14 +81,14 @@
     },
     "bundles": [
       {
-        "name": "app-bundle.js",
+        "name": "core.app-bundle.js",
         "source": [
           "[**/*.js]",
           "**/*.{css,html}"
         ]
       },
       {
-        "name": "vendor-bundle.js",
+        "name": "infra.au-bundle.js",
         "prepend": [
           "node_modules/bluebird/js/browser/bluebird.core.js",
           "node_modules/aurelia-cli/lib/resources/scripts/configure-bluebird.js",
@@ -117,11 +117,6 @@
           "aurelia-templating",
           "aurelia-templating-binding",
           {
-            "name": "text",
-            "path": "../node_modules/systemjs-plugin-text",
-            "main": "text"
-          },
-          {
             "name": "aurelia-templating-resources",
             "path": "../node_modules/aurelia-templating-resources/dist/amd",
             "main": "aurelia-templating-resources"
@@ -137,6 +132,16 @@
             "main": "aurelia-testing",
             "env": "dev"
           },
+          {
+            "name": "text",
+            "path": "../node_modules/systemjs-plugin-text",
+            "main": "text"
+          }
+        ]
+      },
+      {
+        "name": "infra.vendor-bundle.js",
+        "dependencies": [
           "jquery",
           {
             "name": "bootstrap",
