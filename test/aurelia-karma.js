@@ -40,7 +40,7 @@
       }
     });
 
-    setTimeout(() => require(allTestFiles, window.__karma__.start), 6000);
+    require(allTestFiles, window.__karma__.start);
   }
 
   karma.loaded = function() {}; // make it async
