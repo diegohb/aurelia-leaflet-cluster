@@ -5,5 +5,3 @@ describe('the app', () => {
     expect(new App().message).toBe('Hello World!');
   });
 });
-
-

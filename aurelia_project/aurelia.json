@@ -1,12 +1,13 @@
 {
-  "name": "au-leaflet-cluster",
+  "name": "au-aspnetcore-new",
   "type": "project:application",
   "platform": {
-    "id": "web",
-    "displayName": "Web",
-    "output": "scripts",
-    "index": "index.html",
-    "baseDir": "."
+    "id": "aspnetcore",
+    "displayName": "ASP.NET Core",
+    "output": "wwwroot/scripts",
+    "index": "wwwroot/index.html",
+    "baseDir": "./wwwroot",
+    "baseUrl": "scripts"
   },
   "transpiler": {
     "id": "typescript",
@@ -24,14 +25,14 @@
     "source": "src/**/*.html"
   },
   "cssProcessor": {
-    "id": "none",
-    "displayName": "None",
-    "fileExtension": ".css",
-    "source": "src/**/*.css"
+    "id": "less",
+    "displayName": "Less",
+    "fileExtension": ".less",
+    "source": "src/**/*.less"
   },
   "editor": {
-    "id": "vscode",
-    "displayName": "Visual Studio Code"
+    "id": "visualstudio",
+    "displayName": "Visual Studio"
   },
   "unitTestRunner": {
     "id": "karma",
@@ -53,11 +54,12 @@
   "build": {
     "targets": [
       {
-        "id": "web",
-        "displayName": "Web",
-        "output": "scripts",
-        "index": "index.html",
-        "baseDir": "."
+        "id": "aspnetcore",
+        "displayName": "ASP.NET Core",
+        "output": "wwwroot/scripts",
+        "index": "wwwroot/index.html",
+        "baseDir": "./wwwroot",
+        "baseUrl": "scripts"
       }
     ],
     "loader": {
@@ -136,37 +138,6 @@
             "path": "../node_modules/aurelia-testing/dist/amd",
             "main": "aurelia-testing",
             "env": "dev"
-          },
-          "jquery",
-          {
-            "name": "bootstrap",
-            "path": "../node_modules/bootstrap/dist",
-            "main": "js/bootstrap.min.js",
-            "deps": [
-              "jquery"
-            ],
-            "exports": "$",
-            "resources": [
-              "css/bootstrap.css"
-            ]
-          },
-          "velocity-animate",
-          "tether",
-          {
-            "name": "aurelia-bootstrap",
-            "path": "../node_modules/aurelia-bootstrap/dist/amd",
-            "main": "index",
-            "resources": [
-              "**/*.html"
-            ]
-          },
-          {
-            "name": "leaflet",
-            "main": "leaflet-src.js",
-            "path": "../node_modules/leaflet/dist",
-            "resources": [
-              "leaflet.css"
-            ]
           }
         ]
       }
