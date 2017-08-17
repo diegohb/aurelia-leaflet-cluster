@@ -3,6 +3,8 @@ import { Map, MapOptions, LatLng, tileLayer, LatLngExpression, LatLngLiteral, Ic
 import { GeographicExtent } from './model/GeographicExtent';
 import { GeoCoordinate } from "./model/GeoCoordinate";
 import { bindable, bindingMode } from 'aurelia-framework';
+import "bootstrap-material-design";
+
 
 export class App {
   private _map: Map;
@@ -36,6 +38,8 @@ export class App {
     });
 
     this.mapExtent = await App.getMapExtentBounds(this._map);
+
+    $.material.init();
 
     return Promise.resolve(this._map);
   }

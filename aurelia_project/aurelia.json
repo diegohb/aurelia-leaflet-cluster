@@ -63,7 +63,7 @@
     "loader": {
       "type": "system",
       "configTarget": "vendor-bundle.js",
-      "includeBundleMetadataInConfig": "auto",
+      "includeBundleMetadataInConfig": "true",
       "plugins": [
         {
           "name": "text",
@@ -166,6 +166,20 @@
             "path": "../node_modules/leaflet/dist",
             "resources": [
               "leaflet.css"
+            ]
+          },
+          {
+            "name": "bootstrap-material-design",
+            "main": "dist/js/material.min.js",
+            "path": "../node_modules/bootstrap-material-design",
+            "exports": "$",
+            "deps": [
+              "jquery"
+            ],
+            "resources": [
+              "dist/js/ripples.min.js",
+              "dist/css/bootstrap-material-design.min.css",
+              "dist/css/ripples.min.css"
             ]
           }
         ]
