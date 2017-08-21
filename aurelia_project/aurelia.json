@@ -167,6 +167,15 @@
             "resources": [
               "leaflet.css"
             ]
+          },
+          {
+            "name": "aurelia-typescript-plugin",
+            "main": "index",
+            "path": "../node_modules/aurelia-typescript-plugin/dist/commonjs",
+            "resources": [
+              "**/*.html",
+              "**/*.css"
+            ]
           }
         ]
       }
