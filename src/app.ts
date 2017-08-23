@@ -13,7 +13,11 @@ export class App {
   public leafletMapOptions: MapOptions = {
     minZoom: 9,
     maxZoom: 18,
-    zoomControl: false
+    zoomControl: true,
+    center: {
+      lat:38.883,
+      lng: -76.9947
+    }
   };
 
   constructor() {
@@ -30,9 +34,6 @@ export class App {
   private async initializeMap(pLeafletMap: Map, pMaxZoom: number): Promise<any> {
 
     addZoomControls(pLeafletMap);
-
-    let centerCoordinates: LatLng | LatLngLiteral = new LatLng(38.883, -76.9947);
-    pLeafletMap.setView(centerCoordinates, 16);
 
     let baseLayer =
       tileLayer(
