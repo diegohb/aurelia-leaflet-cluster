@@ -169,6 +169,18 @@
             ]
           },
           {
+            "name": "aurelia-leaflet",
+            "main": "index",
+            "path": "../node_modules/aurelia-leaflet/dist/amd",
+            "resources": [
+              "**/*.html",
+              "**/*.js"
+            ],
+            "deps":[
+              "leaflet"
+            ]     
+          },
+          {
             "name": "bootstrap-material-design",
             "main": "dist/js/material.min.js",
             "path": "../node_modules/bootstrap-material-design",
