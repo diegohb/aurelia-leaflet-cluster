@@ -173,7 +173,8 @@
             "main": "index",
             "path": "../node_modules/aurelia-leaflet/dist/amd",
             "resources": [
-              "**/*.html"
+              "**/*.html",
+              "**/*.js"
             ],
             "deps":[
               "leaflet"

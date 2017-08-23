@@ -16,7 +16,7 @@ export class App {
   public async attached(): Promise<any> {
     $("p#jquery").text("jquery loaded!")
 
-    let elMap: HTMLElement = document.getElementById("leafmap");
+    let elMap: HTMLElement = $(".leaflet-container").get(0);
 
     if (!elMap) {
       return Promise.reject("Map container element expected by ID 'leafmap'.");
@@ -28,16 +28,7 @@ export class App {
       zoomControl: false
     };
 
-    let newMap = new Map(elMap, mapOptions);
-
-    this._map = await this.initializeMap(newMap, mapOptions.maxZoom);
-    this._map.on("moveend", async () => {
-      this.mapExtent = await App.getMapExtentBounds(this._map);
-    });
-
-    this.mapExtent = await App.getMapExtentBounds(this._map);
-
-    return Promise.resolve(this._map);
+    return Promise.resolve();
   }
 
   private async initializeMap(pLeafletMap: Map, pMaxZoom: number): Promise<any> {
