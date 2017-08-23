@@ -10,23 +10,19 @@ export class App {
 
   mapExtent: GeographicExtent = null;
 
+  public leafletMapOptions: MapOptions = {
+    minZoom: 9,
+    maxZoom: 18,
+    zoomControl: false
+  };
+
   constructor() {
   }
 
   public async attached(): Promise<any> {
     $("p#jquery").text("jquery loaded!")
-
+    
     let elMap: HTMLElement = $(".leaflet-container").get(0);
-
-    if (!elMap) {
-      return Promise.reject("Map container element expected by ID 'leafmap'.");
-    }
-
-    let mapOptions: MapOptions = {
-      minZoom: 9,
-      maxZoom: 18,
-      zoomControl: false
-    };
 
     return Promise.resolve();
   }
