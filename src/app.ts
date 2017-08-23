@@ -1,14 +1,23 @@
+import { autoinject } from "aurelia-dependency-injection";
 import * as $ from "jquery";
 import { Map, MapOptions, LatLng, tileLayer, LatLngExpression, LatLngLiteral, Icon, control, Layer } from "leaflet";
 import { GeographicExtent } from './model/GeographicExtent';
 import { GeoCoordinate } from "./model/GeoCoordinate";
 import { bindable, bindingMode } from 'aurelia-framework';
+import {EventAggregator} from 'aurelia-event-aggregator';
 
+@autoinject()
 export class App {
   private _map: Map;
-  message = 'Hello World!';
+  private _eventBus:EventAggregator;
+  
+  constructor(pEventBus:EventAggregator) {
+    this._eventBus = pEventBus;
+  }
 
-  mapExtent: GeographicExtent = null;
+  public message = 'Hello World!';
+
+  public mapExtent: GeographicExtent = null;
 
   public leafletMapOptions: MapOptions = {
     minZoom: 9,
@@ -38,11 +47,16 @@ export class App {
     overlay: []
   };
 
-  constructor() {
-  }
-
   public async attached(): Promise<any> {
     $("p#jquery").text("jquery loaded!")
+
+    this._eventBus.subscribe("aurelia-leaflet", async (pData) => {
+      console.log("aurelia-leaflet event", pData);
+
+      if(pData.type == "moveend"){
+        this.mapExtent = await App.getMapExtentBounds(pData.map);
+      }
+    });
 
     return Promise.resolve();
   }
